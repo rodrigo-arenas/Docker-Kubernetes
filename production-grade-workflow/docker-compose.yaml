@@ -4,7 +4,9 @@ services:
     image: redis
 
   hello-api:
-    build: .
+    build:
+      context: .  # current directory
+      dockerfile: Dockerfile.dev
     ports:
       - '80:80'
     volumes:
