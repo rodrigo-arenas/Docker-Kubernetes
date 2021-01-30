@@ -1,0 +1,11 @@
+version: '3'
+services:
+  redis-server:
+    image: redis
+
+  hello-api:
+    build: .
+    ports:
+      - '80:80'
+    depends_on:
+      - redis-server

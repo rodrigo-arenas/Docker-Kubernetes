@@ -9,7 +9,7 @@ redis = None
 @app.on_event('startup')
 async def connect_redis():
     global redis
-    redis = await aioredis.create_redis_pool('redis://localhost')
+    redis = await aioredis.create_redis_pool(('redis-server', 6379))
     await redis.set('visits', 0)
 
 
