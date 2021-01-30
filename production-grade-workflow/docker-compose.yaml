@@ -9,5 +9,7 @@ services:
       - '80:80'
     volumes:
       - ./:/app
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
     depends_on:
       - redis-server
