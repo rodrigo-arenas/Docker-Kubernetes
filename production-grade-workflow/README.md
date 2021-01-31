@@ -5,7 +5,7 @@ Python count app with redis cache backend
 
 ```
 docker-compose up --build
-
+```
 
 Go to http://localhost/
 
