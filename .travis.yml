@@ -4,7 +4,8 @@ services:
 
 before_install:
   - cd production-grade-workflow
-  - docker-compose up --build
+  - docker-compose up --build &
+  - echo "BUILD FINISHED"
 
 script:
   - docker exec -it hello-api-test sh
