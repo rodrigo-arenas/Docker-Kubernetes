@@ -15,3 +15,7 @@ Run the container sh
 docker exec -it hello-api-test sh
 ```
 
+```
+pytest tests/
+```
+
