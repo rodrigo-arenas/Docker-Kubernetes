@@ -6,4 +6,5 @@ before_install:
   - docker build -t rodrigo/hello-api -f Dockerfile.dev .
 
 script:
+  - cd production-grade-workflow
   - pytest --cov=app tests/
