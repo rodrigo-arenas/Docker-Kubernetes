@@ -1,0 +1,20 @@
+version: '3'
+services:
+  hello-api:
+    ports:
+      - '80:80'
+    volumes:
+      - ./:/app
+
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: hello-api-test
+    image: hello-api-test-build
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+    stdin_open: true
+    tty: true
+    depends_on:
+      - redis-server

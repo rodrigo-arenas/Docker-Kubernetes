@@ -10,24 +10,8 @@ services:
       dockerfile: Dockerfile.dev
     container_name: hello-api
     image: hello-api-build
-    ports:
-      - '80:80'
-    volumes:
-      - ./:/app
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     depends_on:
       - redis-server
 
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    container_name: hello-api-test
-    image: hello-api-test-build
-    environment:
-      - PYTHONDONTWRITEBYTECODE=1
-    stdin_open: true
-    tty: true
-    depends_on:
-      - redis-server

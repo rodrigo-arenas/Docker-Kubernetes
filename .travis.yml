@@ -4,7 +4,7 @@ services:
 
 before_install:
   - cd production-grade-workflow
-  - docker-compose up --build -d
+  - docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml up --build -d
   - docker-compose ps
 
 script:
