@@ -16,6 +16,6 @@ docker exec -it hello-api-test sh
 ```
 
 ```
-pytest tests/
+pytest --cov=app tests/
 ```
 
