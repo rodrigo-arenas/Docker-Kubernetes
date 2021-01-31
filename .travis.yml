@@ -5,7 +5,11 @@ services:
 before_install:
   - cd production-grade-workflow
   - docker-compose up --build -d
+  - docker-compose ps
 
 script:
   - docker exec -it hello-api-test sh
   - pytest --cov=app tests/
+
+after_success:
+    - codecov
