@@ -2,13 +2,14 @@ version: '3'
 services:
   redis-server:
     image: redis
-    container_name: redis-server:v1
+    container_name: redis-server
 
   hello-api:
     build:
       context: .  # current directory
       dockerfile: Dockerfile.dev
-    container_name: hello-api:v1
+    container_name: hello-api
+    image: hello-api-build
     ports:
       - '80:80'
     volumes:
@@ -22,7 +23,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    container_name: test:v1
+    container_name: hello-api-test
+    image: hello-api-test-build
     stdin_open: true
     tty: true
     depends_on:
