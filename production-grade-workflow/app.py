@@ -25,6 +25,6 @@ async def greeting():
     global redis
     current_visits = int(await redis.get('visits', encoding='utf-8'))
     current_visits += 1
-    redis.set('visits', current_visits)
+    await redis.set('visits', current_visits)
     return {"message": f'Hi there!, you got {current_visits} visits so far'}
 
