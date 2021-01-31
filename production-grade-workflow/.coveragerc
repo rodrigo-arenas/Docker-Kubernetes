@@ -1,0 +1,13 @@
+[run]
+omit =
+    ./tests/*
+    ./venv/*
+    ./docs/*
+    #File that comes from tiangolo/uvicorn-gunicorn image
+    main.py
+[report]
+precision = 2
+show_missing = True
+sort = Cover
+[xml]
+output=./coverage.xml

@@ -8,7 +8,7 @@ before_install:
   - docker-compose ps
 
 script:
-  - docker exec -it hello-api-test pytest --ignore=tests/ --cov=app tests/
+  - docker exec -it hello-api-test pytest --ignore=tests/ --cov=app tests/ --cov-config=.coveragerc
 
 after_success:
     - codecov
