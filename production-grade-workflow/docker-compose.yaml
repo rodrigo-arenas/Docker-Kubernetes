@@ -25,6 +25,8 @@ services:
       dockerfile: Dockerfile.dev
     container_name: hello-api-test
     image: hello-api-test-build
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
     stdin_open: true
     tty: true
     depends_on:
