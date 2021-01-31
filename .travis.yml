@@ -8,8 +8,7 @@ before_install:
   - docker-compose ps
 
 script:
-  - docker exec -it hello-api-test sh
-  - pytest --cov=app tests/
+  - docker exec -it hello-api-test pytest --cov=app tests/
 
 after_success:
     - codecov

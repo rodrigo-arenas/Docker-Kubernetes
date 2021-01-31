@@ -10,12 +10,9 @@ docker-compose up --build
 Go to http://localhost/
 
 # Test
-Run the container sh
+Run the tests inside the container
 ```
-docker exec -it hello-api-test sh
+docker exec -it hello-api-test pytest --cov=app tests/
 ```
 
-```
-pytest --cov=app tests/
-```
 
