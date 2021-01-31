@@ -4,9 +4,7 @@ services:
 
 before_install:
   - cd production-grade-workflow
-  - gem install bundler
-  - docker-compose up --build &
-  - echo "BUILD FINISHED"
+  - docker-compose up --build -d
 
 script:
   - docker exec -it hello-api-test sh
