@@ -4,9 +4,8 @@ services:
 
 before_install:
   - cd production-grade-workflow
-  - docker build -t rodrigo/hello-api-build -f Dockerfile.dev .
+  - docker-compose up --build
 
 script:
-  - docker run --name hello-api rodrigo/hello-api-build
-  - docker exec -it hello-api sh
+  - docker exec -it hello-api-test sh
   - pytest --cov=app tests/
