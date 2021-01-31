@@ -7,4 +7,5 @@ before_install:
   - docker build -t rodrigo/hello-api -f Dockerfile.dev .
 
 script:
+  - docker exec -it rodrigo/hello-api sh
   - pytest --cov=app tests/
